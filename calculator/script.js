@@ -7,6 +7,15 @@ function appendValue(val) {
             return;
         }
     }
+    // Prevent consecutive operators
+    const operators = ['+', '-', '*', '/'];
+    if (operators.includes(val)) {
+        if (display.value !== '' && operators.includes(display.value.slice(-1))) {
+            // Replace last operator with new one
+            display.value = display.value.slice(0, -1) + val;
+            return;
+        }
+    }
     // Prevent multiple decimals in a number
     if (val === '.') {
         const parts = display.value.split(/\+|\-|\*|\//);
