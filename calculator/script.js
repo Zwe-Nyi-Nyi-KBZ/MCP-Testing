@@ -1,9 +1,10 @@
 const display = document.getElementById('display');
 
 function appendValue(val) {
-    // Prevent first input from being '+', '-', '.', or '='
+    // Prevent first input from being any operator ('+', '-', '*', '/'), '.', or '='
     if (display.value === '') {
-        if (['+', '-', '.', '='].includes(val)) {
+        const operators = ['+', '-', '*', '/'];
+        if (operators.includes(val) || val === '.' || val === '=') {
             return;
         }
     }
