@@ -8,10 +8,12 @@
 </head>
 <body>
     <div class="calculator">
-        <input type="text" class="display" id="display" disabled>
+    <input type="text" class="display" id="display">
         <div class="buttons">
             <button onclick="clearDisplay()">C</button>
             <button onclick="deleteLast()">&#8592;</button>
+            <button onclick="appendValue('(')">(</button>
+            <button onclick="appendValue(')')">)</button>
             <button onclick="appendValue('/')">&divide;</button>
             <button onclick="appendValue('*')">&times;</button>
             <button onclick="appendValue('7')">7</button>
@@ -28,6 +30,13 @@
             <button onclick="calculate()">=</button>
             <button onclick="appendValue('0')">0</button>
             <button onclick="appendValue('.')">.</button>
+            <button onclick="insertFunction('sqrt')">sqrt</button>
+            <button onclick="insertFunction('sin')">sin</button>
+            <button onclick="insertFunction('cos')">cos</button>
+            <button onclick="insertFunction('tan')">tan</button>
+            <button onclick="insertFunction('log')">log</button>
+            <button onclick="insertFunction('exp')">exp</button>
+            <button onclick="insertFunction('pow')">pow</button>
         </div>
     </div>
     <script src="script.js"></script>
