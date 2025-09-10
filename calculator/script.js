@@ -1,10 +1,10 @@
 const display = document.getElementById('display');
 
 function appendValue(val) {
-    // Prevent first input from being any operator ('+', '-', '*', '/'), '.', or '='
+    // Prevent first input from being any operator ('+', '-', '*', '/'), '.', '=', or ')'
     if (display.value === '') {
         const operators = ['+', '-', '*', '/'];
-        if (operators.includes(val) || val === '.' || val === '=') {
+        if (operators.includes(val) || val === '.' || val === '=' || val === ')') {
             return;
         }
     }
@@ -16,6 +16,17 @@ function appendValue(val) {
             display.value = display.value.slice(0, -1) + val;
             return;
         }
+    }
+    // Allow parentheses and advanced math functions
+    if (val === '(' || val === ')') {
+        display.value += val;
+        return;
+    }
+    // Advanced math functions
+    const mathFunctions = ['sqrt(', 'sin(', 'cos(', 'tan(', 'log(', 'exp(', 'pow(', '%'];
+    if (mathFunctions.includes(val)) {
+        display.value += val;
+        return;
     }
     // Prevent multiple decimals in a number
     if (val === '.') {
@@ -41,7 +52,17 @@ function calculate() {
         return;
     }
     try {
-        display.value = eval(display.value);
+        // Replace advanced math functions with JS Math equivalents
+        let expr = display.value
+            .replace(/sqrt\(/g, 'Math.sqrt(')
+            .replace(/sin\(/g, 'Math.sin(')
+            .replace(/cos\(/g, 'Math.cos(')
+            .replace(/tan\(/g, 'Math.tan(')
+            .replace(/log\(/g, 'Math.log(')
+            .replace(/exp\(/g, 'Math.exp(')
+            .replace(/pow\(/g, 'Math.pow(')
+            .replace(/(\d+)%/g, '($1/100)');
+        display.value = eval(expr);
     } catch (e) {
         display.value = 'Error';
     }
