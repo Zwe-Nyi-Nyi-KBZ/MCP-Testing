@@ -48,5 +48,43 @@
         </div>
     </div>
     <script src="script.js"></script>
+        <script>
+        // Keyboard event support
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+            if ((key >= '0' && key <= '9') || key === '.') {
+                appendValue(key);
+            } else if (key === '+') {
+                appendValue('+');
+            } else if (key === '-') {
+                appendValue('-');
+            } else if (key === '*' || key === 'x' || key === 'X') {
+                appendValue('*');
+            } else if (key === '/' || key === '÷') {
+                appendValue('/');
+            } else if (key === '(') {
+                appendValue('(');
+            } else if (key === ')') {
+                appendValue(')');
+            } else if (key === 'Enter' || key === '=') {
+                event.preventDefault();
+                calculate();
+            } else if (key === 'Backspace') {
+                deleteLast();
+            } else if (key === 'Escape' || key === 'c' || key === 'C') {
+                clearDisplay();
+            }
+            // Scientific functions (Alt+key)
+            if (event.altKey) {
+                if (key === 's') insertFunction('sin');
+                else if (key === 'c') insertFunction('cos');
+                else if (key === 't') insertFunction('tan');
+                else if (key === 'l') insertFunction('log');
+                else if (key === 'e') insertFunction('exp');
+                else if (key === 'p') insertFunction('pow');
+                else if (key === 'q') insertFunction('sqrt');
+            }
+        });
+        </script>
 </body>
 </html>
