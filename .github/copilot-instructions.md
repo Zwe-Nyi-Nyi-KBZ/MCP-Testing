@@ -23,8 +23,8 @@ If there is no conflict:
   5. Update bug status in BugFix_versions DB.
 
 If there is a conflict:
-  1. Before Fix conflict, insert new record in conflictCheck DB.
-  2. After fixing successfully, git push.
+  1. insert new record in conflictCheck DB in every conflict file to know team members.
+  2. fix conflict will be done by myself, After fixing successfully, git push.
   3. Then check bug fix workflow as above.
 
 ## How to Add Instructions
