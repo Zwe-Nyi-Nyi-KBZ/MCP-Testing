@@ -25,6 +25,9 @@ If there is no conflict:
 If there is a conflict:
   1. Check Notion page 'Calculator Project' in Zwe Nyi Nyi's Workspace.
   2. insert new record in conflictCheck DB in every conflict file to know team members.
+  3. Conflict datetime is always today datetime
+  4. Reported By always my notion name
+  5. Conflict files have multiple, separate by comma
 
 ## How to Add Instructions
 - Add each instruction as a bullet point under "Example Instructions".
