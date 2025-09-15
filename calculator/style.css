@@ -1,24 +1,24 @@
 body {
-    background: #f4f4f4;
+    background: #f4f5f4;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 99vh;
     margin: 0;
 }
 .calculator {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(245, 245, 245, 0.15);
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(245, 245, 245, 0.18);
     padding: 32px 24px;
     width: 340px;
     transition: box-shadow 0.3s;
 }
 .display {
-    width: 100%;
+    width: 99%;
     height: 54px;
     font-size: 2em;
     margin-bottom: 18px;
@@ -26,7 +26,7 @@ body {
     border: none;
     border-radius: 12px;
     padding: 12px;
-    background: rgba(255,255,255,0.25);
+    background: rgba(245,245,245,0.25);
     color: #222;
     box-shadow: 0 2px 8px rgba(31,38,135,0.10);
     backdrop-filter: blur(4px);
@@ -41,7 +41,7 @@ button {
     font-size: 1.15em;
     border: none;
     border-radius: 10px;
-    background: rgba(255,255,255,0.22);
+    background: rgba(245,245,245,0.22);
     color: #222;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(31,38,135,0.08);
@@ -49,10 +49,10 @@ button {
     backdrop-filter: blur(2px);
 }
 button:hover {
-    background: rgba(255,255,255,0.32);
+    background: rgba(245,245,245,0.32);
     box-shadow: 0 4px 12px rgba(31,38,135,0.15);
 }
 button:active {
-    background: rgba(255,255,255,0.42);
+    background: rgba(245,245,245,0.42);
     box-shadow: 0 2px 4px rgba(31,38,135,0.10);
 }
