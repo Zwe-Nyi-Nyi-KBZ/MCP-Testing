@@ -23,9 +23,8 @@ If there is no conflict:
   5. Update bug status in BugFix_versions DB.
 
 If there is a conflict:
-  1. insert new record in conflictCheck DB in every conflict file to know team members.
-  2. fix conflict will be done by myself, After fixing successfully, git push.
-  3. Then check bug fix workflow as above.
+  1. Check Notion page 'Calculator Project' in Zwe Nyi Nyi's Workspace.
+  2. insert new record in conflictCheck DB in every conflict file to know team members.
 
 ## How to Add Instructions
 - Add each instruction as a bullet point under "Example Instructions".
